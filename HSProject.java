@@ -29,15 +29,6 @@ public class HSProject {
         test.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                for (int i = 0; i < DeckListsPlayerOne.size() ; i++) {
-//                    System.out.println("This is player 1 decks: ");
-//                    System.out.println(DeckListsPlayerOne.get(i));
-//                }
-//                for (int i = 0; i < DeckListsPlayerTwo.size() ; i++) {
-//                    System.out.println("This is player 2 decks: ");
-//                    System.out.println(DeckListsPlayerTwo.get(i));
-//
-//                }
                 SwingUtilities.invokeLater(new Runnable() {
                     @Override
                     public void run() {
