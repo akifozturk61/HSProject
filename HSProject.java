@@ -29,15 +29,42 @@ public class HSProject {
         test.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                for (int i = 0; i < DeckListsPlayerOne.size() ; i++) {
-                    System.out.println("This is player 1 decks: ");
-                    System.out.println(DeckListsPlayerOne.get(i));
-                }
-                for (int i = 0; i < DeckListsPlayerTwo.size() ; i++) {
-                    System.out.println("This is player 2 decks: ");
-                    System.out.println(DeckListsPlayerTwo.get(i));
+//                for (int i = 0; i < DeckListsPlayerOne.size() ; i++) {
+//                    System.out.println("This is player 1 decks: ");
+//                    System.out.println(DeckListsPlayerOne.get(i));
+//                }
+//                for (int i = 0; i < DeckListsPlayerTwo.size() ; i++) {
+//                    System.out.println("This is player 2 decks: ");
+//                    System.out.println(DeckListsPlayerTwo.get(i));
+//
+//                }
+                SwingUtilities.invokeLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        JFrame frametest = new JFrame("Test");
+                        frametest.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+                        JPanel panel = new JPanel();
+                        panel.setLayout(new BorderLayout());
+                        JTextArea textOne = new JTextArea();
+                        JTextArea textTwo = new JTextArea();
+                        textOne.append("Player One Decks: " + System.getProperty("line.separator"));
+                        textTwo.append("Player One Decks: " + System.getProperty("line.separator"));
+                        for (String s : DeckListsPlayerOne){
+                            textOne.append(s + System.getProperty("line.separator"));
+                        }
+                        for(String s: DeckListsPlayerTwo){
+                            textTwo.append(s + System.getProperty("line.separator"));
+                        }
+                        panel.add(textOne, BorderLayout.NORTH);
+                        panel.add(textTwo, BorderLayout.SOUTH);
+                        frametest.add(panel);
+                        frametest.pack();
+                        frametest.setLocationByPlatform(true);
+                        frametest.setVisible(true);
 
-                }
+                    }
+                });
+
             }
         });
 
@@ -97,7 +124,7 @@ public class HSProject {
                     });
                     panel.add(b);
                 }
-                
+
                 // Java provided methods to make the gridlayout
                 SpringUtilities.makeCompactGrid(panel,
                         5, 3, //rows, cols
