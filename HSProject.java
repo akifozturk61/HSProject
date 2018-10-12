@@ -39,7 +39,7 @@ public class HSProject {
                         JTextArea textOne = new JTextArea();
                         JTextArea textTwo = new JTextArea();
                         textOne.append("Player One Decks: " + System.getProperty("line.separator"));
-                        textTwo.append("Player One Decks: " + System.getProperty("line.separator"));
+                        textTwo.append("Player Two Decks: " + System.getProperty("line.separator"));
                         for (String s : DeckListsPlayerOne){
                             textOne.append(s + System.getProperty("line.separator"));
                         }
